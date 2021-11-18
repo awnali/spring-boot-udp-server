@@ -15,7 +15,8 @@ public class UdpInboundMessageHandler {
     private final static Logger LOGGER = LoggerFactory.getLogger(UdpInboundMessageHandler.class);
 
     @ServiceActivator(inputChannel = "inboundChannel")
-    public void handeMessage(Message message, @Headers Map<String, Object> headerMap) {
+    public void handeMessage(Message message, @Headers Map<String, Object> headerMap) throws InterruptedException {
+        Thread.sleep(2000);
         LOGGER.info("Received UDP message: {}", new String((byte[]) message.getPayload()));
     }
 }

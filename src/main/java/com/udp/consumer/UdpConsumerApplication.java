@@ -11,4 +11,5 @@ public class UdpConsumerApplication {
 		SpringApplication.run(UdpConsumerApplication.class, args);
 	}
 
+
 }
